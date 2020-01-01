@@ -13,20 +13,20 @@ A python module for generating a static html website.
 ## How to Structure MD content
 
 content
-  pages
-    earth
-      earth01.jpg
-      earth02.jpg
-      default.md
-    venus
-      venus01.jpg
-      venus02.jpg
-      default.md
-    gallery
-      image01.md
-      image02.md
-      gallery.md
-  templates
-    base.html
-    default.html
-    gallery.html
+  - pages
+    - earth
+      - earth01.jpg
+      - earth02.jpg
+      - default.md
+    - venus
+      - venus01.jpg
+      - venus02.jpg
+      - default.md
+    - gallery
+      - image01.md
+      - image02.md
+      - gallery.md
+  - templates
+    - base.html
+    - default.html
+    - gallery.html
