@@ -3,10 +3,17 @@ import os
 import markdown
 
 def main():
-    page = os.path.join('pages', 'digital_sculptures')
-    dst = 'site'
+    print('install worked')
 
-    process_page(page, dst)
+def get_pages(folder):
+    """Return filepaths to page folders"""
+    pages = []
+    for item in os.listdir(folder):
+        if not os.path.isdir(item):
+            continue
+        if not find_md_file(folder):
+            continue
+        pages.append(item)
 
 def process_page(src, dst):
     """Create a webpage in the destination based on markdown in the source"""
