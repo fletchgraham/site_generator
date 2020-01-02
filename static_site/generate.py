@@ -9,11 +9,13 @@ def get_pages(folder):
     """Return filepaths to page folders"""
     pages = []
     for item in os.listdir(folder):
-        if not os.path.isdir(item):
+        item_path = os.path.join(folder, item)
+        if not os.path.isdir(item_path):
             continue
-        if not find_md_file(folder):
+        if not find_md_file(item_path):
             continue
-        pages.append(item)
+        pages.append(item_path)
+    return pages
 
 def process_page(src, dst):
     """Create a webpage in the destination based on markdown in the source"""
