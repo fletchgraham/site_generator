@@ -1,12 +1,16 @@
 import os
+import shutil
 from static_site import generate
 
-def test_find_md_file():
-    file = generate.find_md_file('tests/pages/the_sun')
-    assert 'default.md' in file
 
-def test_get_pages():
-    root = os.path.join('tests', 'pages')
-    pages = generate.get_pages(root)
-    assert os.path.join(root, 'the_sun') in pages
-    assert os.path.join(root, 'not_a_page') not in pages
+def test_proces_page():
+    pages_folder = os.path.join('tests', 'pages')
+    dst = os.path.join('tests', 'site')
+
+    for i in os.listdir(pages_folder):
+        i_path = os.path.join(pages_folder, i)
+        generate.process(i_path, dst)
+
+    assert os.path.exists(os.path.join(dst, 'the_sun'))
+
+    shutil.rmtree(dst)
