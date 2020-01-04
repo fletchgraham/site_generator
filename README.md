@@ -1,5 +1,7 @@
 # Static Site
 
+**NOTE: Doesn't work yet!!**
+
 A python module for generating a static html website.
 
 ## Usage
